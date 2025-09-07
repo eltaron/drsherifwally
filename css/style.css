@@ -1,0 +1,295 @@
+/* ======================= General Styles & Variables ======================= */
+:root {
+  --primary-color: #00f5b4;
+  --primary-dark: #00d99e;
+  --secondary-color: #0c4849;
+  --light-bg: #f8f9fa;
+  --dark-text: #343a40;
+}
+
+body {
+  font-family: "Tajawal", sans-serif;
+  background-color: #fff;
+  color: var(--dark-text);
+  text-align: right;
+  direction: rtl;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+.highlight {
+  color: var(--primary-color);
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.section-title h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ======================= Header ======================= */
+.navbar {
+  background-color: #0c4849;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+.navbar .btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #000;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.navbar .btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 245, 180, 0.3);
+}
+.navbar .btn-outline-primary {
+  border-color: var(--primary-color);
+  color: var(--primary-dark);
+  font-weight: bold;
+}
+.navbar .btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: #000;
+}
+
+/* ======================= Hero Section Carousel ======================= */
+#heroCarousel {
+  border-radius: 25px; /* Rounded corners */
+  overflow: hidden; /* Crucial for making border-radius work on children */
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.15);
+}
+#heroCarousel .carousel-item {
+  height: 80vh;
+  min-height: 450px;
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+}
+#heroCarousel .carousel-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.6)
+  ); /* Gradient overlay */
+}
+#heroCarousel .carousel-caption {
+  right: 8%;
+  left: auto;
+  bottom: 50%;
+  transform: translateY(50%);
+  text-align: right;
+  width: 50%;
+}
+#heroCarousel .btn-cta {
+  background-color: var(--primary-color);
+  color: #000;
+  font-weight: 700;
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+#heroCarousel .btn-cta:hover {
+  transform: scale(1.05);
+  background-color: #fff;
+}
+@media (max-width: 768px) {
+  #heroCarousel .carousel-item {
+    height: 60vh;
+  }
+  #heroCarousel .carousel-caption {
+    width: 90%;
+    right: 5%;
+    text-align: center;
+  }
+  #heroCarousel .carousel-caption h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* ======================= About Section ======================= */
+.about-img {
+  border-radius: 20px;
+  position: relative;
+  border: 8px solid #fff;
+}
+.about-name {
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: var(--secondary-color);
+  margin-bottom: 30px;
+}
+.about-details {
+  font-size: 1.1rem;
+  background-color: var(--light-bg);
+  padding: 15px;
+  border-radius: 10px;
+  border-right: 5px solid var(--primary-color);
+}
+
+/* ======================= Courses Section Carousel (Bigger Cards) ======================= */
+#courses {
+  overflow: hidden;
+}
+.course-slider {
+  padding: 20px 0;
+}
+.course-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+.course-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.course-card .course-info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 25px 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  color: white;
+}
+.course-card .course-info h3 {
+  margin: 0;
+  font-size: 1.6rem; /* Bigger font size */
+  font-weight: 700;
+}
+
+/* ======================= Features Section (With Icons) ======================= */
+.feature-card {
+  background-color: #fff;
+  border: 2px solid #f0f0f5;
+  padding: 30px 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px -10px rgba(80, 80, 150, 0.1);
+  border-color: var(--primary-color);
+}
+.feature-icon-container {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  background-color: rgba(0, 245, 180, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.feature-icon-container i {
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+}
+.feature-title {
+  color: var(--secondary-color);
+  font-weight: 800;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+.feature-text {
+  color: #666;
+}
+
+/* ======================= CTA Section (Improved) ======================= */
+#cta {
+  background: url("../images/cta.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 100px 0;
+}
+.btn-light-cta {
+  background-color: var(--primary-color);
+  color: #000;
+  font-weight: 700;
+  padding: 15px 35px;
+  border-radius: 50px;
+  border: none;
+  transition: all 0.3s ease;
+}
+.btn-light-cta:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+/* ======================= Footer (Improved) ======================= */
+#footer {
+  background-color: var(--secondary-color);
+}
+.footer-logo {
+  filter: brightness(0) invert(1);
+}
+.footer-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.footer-link:hover {
+  color: var(--primary-color);
+  padding-right: 5px;
+}
+footer .copyright a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+footer .copyright a:hover {
+  color: var(--primary-color);
+}
+.social-icons-footer a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  margin-left: 15px;
+  transition: all 0.3s;
+  display: inline-block;
+}
+.social-icons-footer a:hover {
+  color: var(--primary-color);
+  transform: translateY(-5px);
+}
+.copyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
