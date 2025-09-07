@@ -54,6 +54,14 @@ h6 {
   background-color: #0c4849;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
 }
+.navbar .btn {
+  font-size: 18px;
+}
+@media (max-width: 992px) {
+  .navbar .btn {
+    font-size: 12px;
+  }
+}
 .navbar .btn-primary {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
@@ -124,7 +132,7 @@ h6 {
 }
 @media (max-width: 768px) {
   #heroCarousel .carousel-item {
-    height: 60vh;
+    height: 80vh;
   }
   #heroCarousel .carousel-caption {
     width: 90%;
